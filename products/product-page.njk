@@ -4,10 +4,10 @@ pagination:
   data: products
   size: 1
   alias: product
-# This is the corrected line. It wraps the permalink in an 'if' condition.
-permalink: "{% if product.slug %}/products/{{ product.slug }}/index.html{% endif %}"
+permalink: "/products/{{ product.slug | default: product.id }}/index.html"
 title: "{{ product.title }}"
 ---
+
 
 {# 'product' is the alias we defined above. It holds the data for one product. #}
 <article class="product-detail">
