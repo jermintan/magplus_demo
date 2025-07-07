@@ -1,4 +1,3 @@
-// _data/products.js
 const fs = require('fs');
 const path = require('path');
 
@@ -13,7 +12,6 @@ module.exports = () => {
       const content = fs.readFileSync(path.join(productsPath, file), 'utf8');
       const data = JSON.parse(content);
 
-      // NEW ROBUST CHECK:
       // Ensure we are only processing single product objects, not arrays of products.
       if (typeof data === 'object' && data !== null && !Array.isArray(data)) {
         allProducts.push(data);
@@ -25,6 +23,9 @@ module.exports = () => {
 
   // Sort products by SKU to ensure a consistent order
   allProducts.sort((a, b) => (a.sku || '').localeCompare(b.sku || ''));
-  
-  return allProducts;
+
+  // ✅ Filter out products missing a slug to prevent Eleventy build errors
+  const filteredProducts = allProducts.filter(p => p.slug);
+
+  return filteredProducts;
 };
