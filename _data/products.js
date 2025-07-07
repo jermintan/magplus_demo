@@ -6,12 +6,25 @@ module.exports = () => {
   const productsPath = path.join(__dirname, 'products_collection');
   const files = fs.readdirSync(productsPath);
   
-  const products = files.map(file => {
+  const allProducts = [];
+
+  files.forEach(file => {
     if (path.extname(file) === '.json') {
       const content = fs.readFileSync(path.join(productsPath, file), 'utf8');
-      return JSON.parse(content);
-    }
-  }).filter(Boolean); // Filter out any non-JSON files or undefined results
+      const data = JSON.parse(content);
 
-  return products;
+      // NEW ROBUST CHECK:
+      // Ensure we are only processing single product objects, not arrays of products.
+      if (typeof data === 'object' && data !== null && !Array.isArray(data)) {
+        allProducts.push(data);
+      } else {
+        console.warn(`[Data Warning] Skipping file '${file}' because it is not a single JSON object.`);
+      }
+    }
+  });
+
+  // Sort products by SKU to ensure a consistent order
+  allProducts.sort((a, b) => (a.sku || '').localeCompare(b.sku || ''));
+  
+  return allProducts;
 };
