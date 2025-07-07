@@ -4,7 +4,7 @@
 backend:
   name: github
   repo: jermintan/magplus_demo # IMPORTANT: Replace with your actual username and repo name
-  branch: main # Or master, whichever is your main branch
+  branch: deploy-fix # Or master, whichever is your main branch
 
 # This tells Decap where to upload images. It MUST match your Eleventy setup.
 media_folder: "public/images" # Where to upload the images
