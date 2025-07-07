@@ -1,0 +1,121 @@
+<!-- _includes/base.njk -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF--8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- The title is now dynamic! -->
+    <title>{{ product.title }} - MagPlus</title>
+    <!-- Use root-relative paths for assets in the 'public' folder -->
+    <link rel="stylesheet" href="/public/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <a href="/" class="logo">MagPlus</a>
+        
+        <!-- The Main Navigation Menu (RESTORED) -->
+        <nav class="main-nav" id="main-nav">
+            <ul>
+                    <li class="mobile-search-item">
+            <form class="mobile-search" id="mobile-search-form" role="search">
+                <input type="search" name="search" placeholder="Search products..." aria-label="Search products">
+                <button type="submit" aria-label="Submit search"><i class="fa-solid fa-search"></i></button>
+            </form>
+        </li>
+                <li><a href="/products/">PRODUCTS</a></li>
+                <li><a href="#">ACCESSORIES</a></li>
+                <li><a href="#">CHARGING</a></li>
+                <li><a href="#">LIFESTYLE</a></li>
+                <li><a href="#">PROMOTIONS</a></li>
+                <li><a href="#">RETAIL</a></li>
+            </ul>
+        </nav>
+
+        <!-- The Navigation Search Form (ADDITION) -->
+        <form class="nav-search" id="nav-search-form" role="search">
+            <input type="search" name="search" placeholder="Search products..." aria-label="Search products">
+            <button type="submit" aria-label="Submit search"><i class="fa-solid fa-search"></i></button>
+        </form>
+
+        <!-- The Hamburger Button -->
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle menu" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </div>
+</header>
+
+    <main>
+        <!-- This is where the unique content from other files will be injected -->
+        
+
+<article class="product-detail">
+    <div class="product-image-container">
+      <img src="/public/images/product2.webp" alt="Image of RGB Extended Gaming Mousepad">
+    </div>
+    <div class="product-info-container">
+      <h1>RGB Extended Gaming Mousepad</h1>
+      <p class="sku">SKU: MP-GAMINGMAT</p>
+      <p class="price" style="font-size: 1.5em; font-weight: bold; color: #d63384;">$39.00</p>
+      <p class="description">A smooth surface with customizable RGB lighting for your setup.</p>
+    </div>
+</article>
+    </main>
+
+    <footer>
+        <!-- Your footer content remains exactly the same -->
+        <div class="footer-container">
+            <div class="footer-top">
+                <p>CONNECT WITH US</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-main">
+                <div class="footer-info">
+                    <h3>MAGPLUS / A CHALLENGER TECHNOLOGIES BRAND</h3>
+                    <p>Add: 1 Ubi View, #04-01<br>Challenger TecHub<br>Singapore 408555</p>
+                    <p>Tel: +65 6494 8328</p>
+                    <p>Email: contact@magplus.com.sg</p>
+                </div>
+                <div class="footer-links">
+                    <h4>MENU</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Tech Blog</a></li>
+                        <li><a href="#">Lifestyle</a></li>
+                        <li><a href="#">Where To Buy</a></li>
+                        <li><a href="#">Support & Repair</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>OTHER INFO</h4>
+                    <ul>
+                        <li><a href="#">Login/Register</a></li>
+                        <li><a href="#">Account</a></li>
+                        <li><a href="#">My Cart</a></li>
+                        <li><a href="#">Corporate Sales</a></li>
+                        <li><a href="#">History</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 MagPlus. A brand by Challenger Technologies Limited. All Rights Reserved.</p>
+                <p>Ecommerce Web Development by <a href="#">Firstcom Solutions</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/public/script.js"></script>
+</body>
+</html>

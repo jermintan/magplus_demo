@@ -1,0 +1,910 @@
+/* --- Global Styles & Variables --- */
+:root {
+    --primary-color: #000;
+    --secondary-color: #6c757d;
+    --background-light: #f8f9fa;
+    --background-dark: #343a40;
+    --border-color: #dee2e6;
+    --accent-color: #007bff;
+    --font-family: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    color: var(--primary-color);
+    background-color: #fff;
+    line-height: 1.6;
+}
+
+body.nav-open {
+    overflow: hidden; /* Prevent background scroll when mobile menu is open */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* --- Header --- */
+header {
+    background: #fff;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 25px;
+}
+
+.main-nav a {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: var(--primary-color);
+}
+
+.hamburger-btn {
+    display: none; /* Hidden on desktop */
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--primary-color);
+    z-index: 1001; /* To be above the nav menu */
+}
+
+
+/* --- Utility Classes --- */
+.btn {
+    display: inline-block;
+    padding: 10px 30px;
+    border: 1px solid;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+
+.btn-outline {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-outline:hover {
+    background: var(--primary-color);
+    color: #fff;
+}
+.btn-outline-dark {
+    border-color: #fff;
+    color: #fff;
+}
+.btn-outline-dark:hover {
+    background: #fff;
+    color: var(--primary-color);
+}
+
+
+/* --- Hero Section --- */
+.hero {
+    height: 830px;
+    background-image: url('images/hero.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding-left: 10%;
+}
+
+.hero-content {
+    color: var(--primary-color);
+}
+
+.hero-content p {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    font-weight: 600;
+    margin: 10px 0 30px;
+    line-height: 1.2;
+}
+
+/* --- Category Links Section --- */
+.category-links {
+    padding: 80px 0;
+}
+
+.category-links .container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.category-item {
+    text-align: left;
+}
+
+.category-item img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    transition: opacity 0.3s;
+}
+
+.category-item:hover img {
+    opacity: 0.8;
+}
+
+.category-item p {
+    font-weight: 500;
+}
+
+/* --- Anniversary Banner --- */
+.anniversary-banner {
+    height: 800px;
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/trusted.webp');
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: center;
+    padding-top: 80px;
+}
+
+.banner-content p {
+    font-weight: 500;
+}
+
+.banner-content h2 {
+    font-size: 3rem;
+    font-weight: 600;
+    margin: 10px 0 30px;
+}
+
+/* --- Section Header --- */
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+.section-header p {
+    color: var(--secondary-color);
+}
+.section-header h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #747474;
+    letter-spacing: 2px;
+}
+
+/* --- Slider Sections --- */
+.product-slider-section, .content-slider-section {
+    padding: 100px 0;
+}
+
+.slider-container {
+    position: relative;
+}
+
+.slider-wrapper {
+    overflow: hidden;
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    cursor: pointer;
+    z-index: 10;
+}
+
+.slider-btn.prev { left: -50px; }
+.slider-btn.next { right: -50px; }
+
+/* Product Slider Specifics */
+.product-card {
+    flex: 0 0 25%; /* Show 4 items */
+    padding: 0 15px;
+    text-align: center;
+}
+.product-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+.product-card h3 { font-size: 1rem; font-weight: 600; }
+.product-card p { font-size: 0.9rem; color: var(--secondary-color); margin-bottom: 10px; }
+.product-card span { font-weight: 600; }
+
+/* --- History Section --- */
+.history-section {
+    padding: 100px 0;
+    background-color: var(--background-light);
+    text-align: center;
+}
+.history-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin: 60px 0;
+}
+.history-item i {
+    font-size: 3rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+.history-item .stat {
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--accent-color);
+}
+.history-item .desc {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/* --- Content Slider Section --- */
+.content-slider-section {
+    background-color: var(--background-light);
+}
+
+.content-card {
+    flex: 0 0 25%; /* Show 4 items */
+    padding: 0 15px;
+    background-color: #fff;
+    margin: 0 15px;
+}
+.content-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+.content-card div {
+    padding: 20px;
+}
+.content-title {
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.content-date {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--background-light);
+    padding-top: 40px;
+    color: var(--secondary-color);
+}
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+.social-icons {
+    display: flex;
+    gap: 15px;
+    font-size: 1.2rem;
+}
+.footer-main {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+    padding: 40px 0;
+}
+.footer-info h3 {
+    color: var(--primary-color);
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+.footer-info p {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+.footer-links h4 {
+    color: var(--primary-color);
+    font-size: 1rem;
+    margin-bottom: 15px;
+}
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+.footer-links a {
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+.footer-links a:hover {
+    color: var(--primary-color);
+}
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.8rem;
+}
+.footer-bottom a {
+    text-decoration: underline;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 1200px) {
+    .slider-btn.prev { left: 0; }
+    .slider-btn.next { right: 0; }
+}
+
+@media (max-width: 992px) {
+    .header-container { padding: 0 20px; }
+    
+    .hamburger-btn {
+        display: block; /* Show hamburger on mobile */
+    }
+
+    .main-nav {
+        /* Full-screen overlay styles */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        
+        /* Hide off-screen by default */
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+
+        /* Flexbox to center the links */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 999; /* Below the hamburger button */
+    }
+    
+    .main-nav.is-active {
+        transform: translateX(0); /* Slide in when active */
+    }
+    
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px; /* Increased gap for full-screen */
+    }
+    
+    .main-nav a {
+        font-size: 1.5rem; /* Larger font size for mobile overlay */
+        font-weight: 600;
+    }
+    
+    .category-links .container, .history-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .product-card, .content-card {
+        flex-basis: 50%;
+    }
+    .footer-main {
+        grid-template-columns: 1fr 1fr;
+    }
+    .footer-info {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding-left: 5%;
+        height: 500px;
+    }
+    .hero-content h1 { font-size: 2.5rem; }
+    
+    .category-links .container, .history-grid {
+        grid-template-columns: 1fr;
+    }
+    .product-card, .content-card {
+        flex-basis: 100%;
+    }
+    .footer-main {
+        grid-template-columns: 1fr;
+    }
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+}
+
+/* --- Products Page Grid --- */
+.products-page-section {
+    padding: 100px 0;
+}
+
+.product-grid {
+    display: grid;
+    /* This creates a responsive grid that adjusts the number of columns based on screen width */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.product-grid-card {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.product-grid-card:hover {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+}
+
+.product-grid-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+.product-grid-card h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.product-grid-card .product-desc {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.product-grid-card h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+.product-grid-card ul {
+    list-style: none;
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+}
+
+.product-grid-card ul li {
+    margin-bottom: 5px;
+    padding-left: 10px;
+}
+
+/* Add this to the end of your existing style.css */
+.product-grid-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.product-grid .product-card {
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #eee;
+    padding: 20px;
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease;
+}
+
+.product-grid .product-card:hover {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.product-grid .product-card img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+/* For the individual product page */
+.product-detail {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+.product-detail img {
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+    .product-detail {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Add this to the end of your public/style.css file */
+
+.pagination-nav {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination-list {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    gap: 5px;
+    align-items: center;
+}
+
+.pagination-link {
+    display: block;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    text-decoration: none;
+    color: #333;
+    border-radius: 4px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.pagination-link:hover {
+    background-color: #f5f5f5;
+    border-color: #ccc;
+}
+
+.pagination-link.is-active {
+    background-color: #333;
+    color: #fff;
+    border-color: #333;
+    font-weight: bold;
+}
+
+.pagination-list li.disabled span {
+    padding: 10px 15px;
+    color: #aaa;
+    cursor: not-allowed;
+}
+
+/* --- RESPONSIVE STYLES FOR MOBILE --- */
+
+/* For tablets and larger phones (up to 768px wide) */
+@media (max-width: 768px) {
+    .product-grid {
+      /* This overrides the desktop style and forces 2 columns */
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px; /* Reduce the gap slightly for smaller screens */
+    }
+  
+    /* Optional: Make titles and text a bit smaller on mobile */
+    .product-grid .product-card h3 {
+      font-size: 1rem;
+    }
+    .product-grid .product-card p {
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* For smaller phones (up to 480px wide) */
+  @media (max-width: 480px) {
+    .product-grid {
+      /* On very narrow screens, 2 columns can be too crowded.
+         This switches to a single column for the best readability. */
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* Add this to the end of your public/style.css file */
+
+/* --- Product Page Layout with Filter Sidebar --- */
+.product-page-layout {
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 250px 1fr; /* Sidebar width and main content */
+    gap: 40px;
+}
+
+.filter-sidebar {
+    border-right: 1px solid #eee;
+    padding-right: 20px;
+}
+
+.filter-group {
+    margin-bottom: 30px;
+}
+
+.filter-group h3 {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.filter-list {
+    list-style: none;
+    padding: 0;
+}
+
+.filter-list li {
+    margin-bottom: 10px;
+}
+
+.filter-list label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.filter-list input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* Hide product cards by default when filtering */
+.product-card.hidden {
+    display: none;
+}
+
+/* Responsive styles for the filter layout */
+@media (max-width: 992px) {
+    .product-page-layout {
+        /* On smaller screens, stack the sidebar on top of the content */
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .filter-sidebar {
+        border-right: none;
+        padding-right: 0;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 20px;
+    }
+}
+
+/* --- ACCORDION FILTER STYLES (MOBILE-FIRST) --- */
+
+/* This is the clickable header for the accordion */
+.accordion-header {
+    display: flex; /* Changed from 'none' to be mobile-first */
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.accordion-icon {
+    transition: transform 0.3s ease;
+}
+
+/* This is the content (the form) that gets collapsed */
+.accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    padding: 0 15px; /* Add padding for when it's open */
+}
+
+/* On mobile, we don't need the "Category" h3 to have a border */
+.accordion-content .filter-group h3 {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* The active state: when the accordion is open */
+.filter-sidebar.is-active .accordion-content {
+    max-height: 600px; /* A large value to allow content to expand */
+    padding: 15px;
+}
+
+.filter-sidebar.is-active .accordion-icon {
+    transform: rotate(180deg);
+}
+
+/* --- DESKTOP STYLES (for screens 993px and wider) --- */
+@media (min-width: 993px) {
+    /* On desktop, hide the accordion button */
+    .accordion-header {
+        display: none;
+    }
+
+    /* On desktop, always show the content */
+    .accordion-content {
+        max-height: none; /* Remove height limit */
+        overflow: visible;
+        padding: 0;
+    }
+
+    /* On desktop, bring back the border on the "Category" h3 */
+    .accordion-content .filter-group h3 {
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 10px;
+    }
+}
+
+/* --- SEARCH BAR STYLES --- */
+
+/* Style for the search bar in the main navigation */
+.nav-search {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 0 5px 0 15px;
+    margin: 0 20px;
+}
+
+.nav-search input[type="search"] {
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 8px 0;
+    font-size: 0.9rem;
+}
+
+.nav-search button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Style for the search input in the filter sidebar */
+.sidebar-search {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .nav-search {
+        display: none; /* Hide nav search on smaller screens for simplicity */
+    }
+}
+
+/* --- MOBILE MENU SEARCH BAR --- */
+
+/* This is hidden by default on desktop */
+.mobile-search-item {
+    display: none;
+    padding: 10px 15px;
+}
+
+.mobile-search {
+    display: flex;
+    width: 100%;
+    background-color: #f0f0f0; /* Different background to stand out in the menu */
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.mobile-search input {
+    flex-grow: 1; /* Makes the input field take up all available space */
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.mobile-search button {
+    background: none;
+    border: none;
+    padding: 0 12px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #333;
+}
+
+/* --- UPDATE YOUR EXISTING MEDIA QUERY --- */
+
+/* Find your existing @media (max-width: 992px) block and add the new rule */
+@media (max-width: 992px) {
+    .nav-search {
+        display: none; /* This rule should already exist */
+    }
+    
+    /* Add this rule to show the search bar inside the mobile menu */
+    .mobile-search-item {
+        display: block;
+    }
+}
+
+/* --- UNIFY SEARCH BAR FONT --- */
+
+/* Target the text the user TYPES into both search bars */
+.nav-search input[type="search"],
+.mobile-search input[type="search"] {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Target the placeholder text specifically for both search bars */
+.nav-search input[type="search"]::placeholder,
+.mobile-search input[type="search"]::placeholder {
+    font-family: 'Poppins', sans-serif;
+    /* Optional: You can also style the placeholder color to make it lighter */
+    color: #999;
+}

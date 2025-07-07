@@ -1,0 +1,232 @@
+<!-- _includes/base.njk -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF--8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- The title is now dynamic! -->
+    <title>Our Products - MagPlus</title>
+    <!-- Use root-relative paths for assets in the 'public' folder -->
+    <link rel="stylesheet" href="/public/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="/" class="logo">MagPlus</a>
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <!-- This link now correctly points to our products page -->
+                    <li><a href="/products/">PRODUCTS</a></li>
+                    <li><a href="#">ACCESSORIES</a></li>
+                    <li><a href="#">CHARGING</a></li>
+                    <li><a href="#">LIFESTYLE</a></li>
+                    <li><a href="#">PROMOTIONS</a></li>
+                    <li><a href="#">RETAIL</a></li>
+                </ul>
+            </nav>
+            <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle menu" aria-expanded="false">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- This is where the unique content from other files will be injected -->
+        
+<div class="product-grid-container">
+    
+    <h1>Our Products (Page 4 of 5)</h1>
+    <p>Browse our collection of essential tech for your modern lifestyle.</p>
+
+    <div class="product-grid">
+        
+        
+            <a href="/products/mp-mouse-ergo/" class="product-card">
+                <img src="/public/images/product5.webp" alt="Ergonomic Wireless Mouse">
+                <h3>MP-MOUSE</h3>
+                <p>Ergonomic Wireless Mouse</p>
+                <span>$32.00</span>
+            </a>
+        
+            <a href="/products/mp-mkey-mech/" class="product-card">
+                <img src="/public/images/product4.webp" alt="Compact Mechanical Keyboard">
+                <h3>MP-MKEY</h3>
+                <p>Compact Mechanical Keyboard</p>
+                <span>$89.00</span>
+            </a>
+        
+            <a href="/products/mp-ringlight-pro/" class="product-card">
+                <img src="/public/images/product3.webp" alt="10-inch Selfie Ring Light">
+                <h3>MP-RINGLIGHT</h3>
+                <p>10-inch Selfie Ring Light</p>
+                <span>$34.00</span>
+            </a>
+        
+            <a href="/products/mp-hub7-adapter/" class="product-card">
+                <img src="/public/images/product2.webp" alt="7-in-1 USB-C Hub Adapter">
+                <h3>MP-HUB7</h3>
+                <p>7-in-1 USB-C Hub Adapter</p>
+                <span>$55.00</span>
+            </a>
+        
+            <a href="/products/mp-webcam-hd/" class="product-card">
+                <img src="/public/images/product1.jpg" alt="1080p HD Webcam with Privacy Cover">
+                <h3>MP-WEBCAM</h3>
+                <p>1080p HD Webcam with Privacy Cover</p>
+                <span>$45.00</span>
+            </a>
+        
+            <a href="/products/mp-deskpad-pro/" class="product-card">
+                <img src="/public/images/category4.webp" alt="Pro Leather Desk Pad">
+                <h3>MP-DESKPAD</h3>
+                <p>Pro Leather Desk Pad</p>
+                <span>$35.00</span>
+            </a>
+        
+            <a href="/products/mp-carmount-mag/" class="product-card">
+                <img src="/public/images/category3.webp" alt="Magnetic Car Vent Mount">
+                <h3>MP-CARMOUNT</h3>
+                <p>Magnetic Car Vent Mount</p>
+                <span>$24.00</span>
+            </a>
+        
+            <a href="/products/mp-earbuds-air/" class="product-card">
+                <img src="/public/images/category2.png" alt="True Wireless Stereo Earbuds">
+                <h3>MP-EARBUDS</h3>
+                <p>True Wireless Stereo Earbuds</p>
+                <span>$59.00</span>
+            </a>
+        
+            <a href="/products/mp-stand-phone/" class="product-card">
+                <img src="/public/images/category1.jpg" alt="Adjustable Aluminum Phone Stand">
+                <h3>MP-STAND</h3>
+                <p>Adjustable Aluminum Phone Stand</p>
+                <span>$22.00</span>
+            </a>
+        
+            <a href="/products/mp-power10k-bank/" class="product-card">
+                <img src="/public/images/product5.webp" alt="10,000mAh Slim Power Bank">
+                <h3>MP-POWER10K</h3>
+                <p>10,000mAh Slim Power Bank</p>
+                <span>$39.00</span>
+            </a>
+        
+            <a href="/products/mp-cablepro-usbc/" class="product-card">
+                <img src="/public/images/product4.webp" alt="Braided USB-C to USB-C 100W Cable">
+                <h3>MP-CABLEPRO</h3>
+                <p>Braided USB-C to USB-C 100W Cable</p>
+                <span>$19.00</span>
+            </a>
+        
+            <a href="/products/mp-fanmini-fan/" class="product-card">
+                <img src="/public/images/product3.webp" alt="Rechargeable Portable Mini Fan">
+                <h3>MP-FANMINI</h3>
+                <p>Rechargeable Portable Mini Fan</p>
+                <span>$25.00</span>
+            </a>
+        
+    </div>
+
+    
+    
+    <nav class="pagination-nav" aria-label="Product page navigation">
+        <ul class="pagination-list">
+            
+            
+                <li><a href="/products/2/" class="pagination-link">« Previous</a></li>
+            
+
+            
+                <li>
+                    <a href="/products/" class="pagination-link " aria-label="Go to page 1">
+                        1
+                    </a>
+                </li>
+                <li>
+                    <a href="/products/1/" class="pagination-link " aria-label="Go to page 2">
+                        2
+                    </a>
+                </li>
+                <li>
+                    <a href="/products/2/" class="pagination-link " aria-label="Go to page 3">
+                        3
+                    </a>
+                </li>
+                <li>
+                    <a href="/products/3/" class="pagination-link is-active" aria-label="Go to page 4">
+                        4
+                    </a>
+                </li>
+                <li>
+                    <a href="/products/4/" class="pagination-link " aria-label="Go to page 5">
+                        5
+                    </a>
+                </li>
+
+            
+            
+                <li><a href="/products/4/" class="pagination-link">Next »</a></li>
+            
+        </ul>
+    </nav>
+
+</div>
+    </main>
+
+    <footer>
+        <!-- Your footer content remains exactly the same -->
+        <div class="footer-container">
+            <div class="footer-top">
+                <p>CONNECT WITH US</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-main">
+                <div class="footer-info">
+                    <h3>MAGPLUS / A CHALLENGER TECHNOLOGIES BRAND</h3>
+                    <p>Add: 1 Ubi View, #04-01<br>Challenger TecHub<br>Singapore 408555</p>
+                    <p>Tel: +65 6494 8328</p>
+                    <p>Email: contact@magplus.com.sg</p>
+                </div>
+                <div class="footer-links">
+                    <h4>MENU</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Tech Blog</a></li>
+                        <li><a href="#">Lifestyle</a></li>
+                        <li><a href="#">Where To Buy</a></li>
+                        <li><a href="#">Support & Repair</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>OTHER INFO</h4>
+                    <ul>
+                        <li><a href="#">Login/Register</a></li>
+                        <li><a href="#">Account</a></li>
+                        <li><a href="#">My Cart</a></li>
+                        <li><a href="#">Corporate Sales</a></li>
+                        <li><a href="#">History</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 MagPlus. A brand by Challenger Technologies Limited. All Rights Reserved.</p>
+                <p>Ecommerce Web Development by <a href="#">Firstcom Solutions</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/public/script.js"></script>
+</body>
+</html>

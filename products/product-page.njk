@@ -1,0 +1,22 @@
+---
+layout: base.njk
+pagination:
+  data: products
+  size: 1
+  alias: product
+permalink: "/products/{{ product.slug }}/index.html"
+title: "{{ product.title }}"
+---
+
+{# 'product' is the alias we defined above. It holds the data for one product. #}
+<article class="product-detail">
+    <div class="product-image-container">
+      <img src="{{ product.image }}" alt="Image of {{ product.title }}">
+    </div>
+    <div class="product-info-container">
+      <h1>{{ product.title }}</h1>
+      <p class="sku">SKU: {{ product.sku }}</p>
+      <p class="price" style="font-size: 1.5em; font-weight: bold; color: #d63384;">${{ product.price }}</p>
+      <p class="description">{{ product.description }}</p>
+    </div>
+</article>

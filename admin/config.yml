@@ -1,0 +1,34 @@
+# admin/config.yml
+
+# This is the backend configuration. It tells Decap how to connect to your Git repo.
+backend:
+  name: github
+  repo: jermintan/magplus_demo # IMPORTANT: Replace with your actual username and repo name
+  branch: main # Or master, whichever is your main branch
+
+# This tells Decap where to upload images. It MUST match your Eleventy setup.
+media_folder: "public/images" # Where to upload the images
+public_folder: "/public/images" # The public-facing path for the images
+
+# Collections define the types of content that can be edited.
+# We only have one for now: Products.
+collections:
+  - name: "products" # An identifier for the collection
+    label: "Products" # The name that will appear in the CMS UI
+    label_singular: "Product" # The name for a single item
+    description: "Manage all product specifications here."
+    folder: "_data/products_collection" # TEMPORARY - Decap works best with one file per item. We'll merge them later.
+    create: true # Allow users to create new products
+    delete: true # Allow users to delete products
+    slug: "{{slug}}" # Use the 'slug' field for the filename
+    fields: # These are the fields for each product. They MUST match your JSON structure.
+      - { label: "SKU", name: "sku", widget: "string" }
+      - { label: "Slug", name: "slug", widget: "string", hint: "URL-friendly identifier (e.g., mp-gan65-charger)" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Price", name: "price", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Description", name: "description", widget: "text" }
+      - label: "Category"
+        name: "category"
+        widget: "select" # A dropdown list is better for data consistency
+        options: ["Accessory", "Audio", "Cable", "Case", "Charger", "Keyboard & Mouse", "Lifestyle", "Storage"]

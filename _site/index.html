@@ -1,0 +1,281 @@
+<!-- _includes/base.njk -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF--8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- The title is now dynamic! -->
+    <title>Home - MagPlus</title>
+    <!-- Use root-relative paths for assets in the 'public' folder -->
+    <link rel="stylesheet" href="/public/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <a href="/" class="logo">MagPlus</a>
+        
+        <!-- The Main Navigation Menu (RESTORED) -->
+        <nav class="main-nav" id="main-nav">
+            <ul>
+                    <li class="mobile-search-item">
+            <form class="mobile-search" id="mobile-search-form" role="search">
+                <input type="search" name="search" placeholder="Search products..." aria-label="Search products">
+                <button type="submit" aria-label="Submit search"><i class="fa-solid fa-search"></i></button>
+            </form>
+        </li>
+                <li><a href="/products/">PRODUCTS</a></li>
+                <li><a href="#">ACCESSORIES</a></li>
+                <li><a href="#">CHARGING</a></li>
+                <li><a href="#">LIFESTYLE</a></li>
+                <li><a href="#">PROMOTIONS</a></li>
+                <li><a href="#">RETAIL</a></li>
+            </ul>
+        </nav>
+
+        <!-- The Navigation Search Form (ADDITION) -->
+        <form class="nav-search" id="nav-search-form" role="search">
+            <input type="search" name="search" placeholder="Search products..." aria-label="Search products">
+            <button type="submit" aria-label="Submit search"><i class="fa-solid fa-search"></i></button>
+        </form>
+
+        <!-- The Hamburger Button -->
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Toggle menu" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </div>
+</header>
+
+    <main>
+        <!-- This is where the unique content from other files will be injected -->
+        
+<main>
+        
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-content">
+        <p>MP-GAN65 CHARGER</p>
+        <h1>Essential Tech for<br>Your Modern Lifestyle</h1>
+        <a href="#" class="btn btn-outline">Explore Now</a>
+    </div>
+</section>
+
+<!-- Category Links Section -->
+<section class="category-links">
+    <div class="container">
+        <a href="#" class="category-item">
+            <img src="/public/images/category1.jpg" alt="About Us">
+            <p>Portable Fans</p>
+        </a>
+        <a href="#" class="category-item">
+            <img src="/public/images/category2.png" alt="Use Cases">
+            <p>Portable Chargers</p>
+        </a>
+        <a href="#" class="category-item">
+            <img src="/public/images/category3.webp" alt="Blog">
+            <p>Phone Covers</p>
+        </a>
+        <a href="#" class="category-item">
+            <img src="/public/images/category4.webp" alt="Support">
+            <p>Type-C Chargers</p>
+        </a>
+    </div>
+</section>
+
+<!-- Anniversary Banner -->
+<section class="anniversary-banner">
+    <div class="banner-content">
+        <p>MAGPLUS CELEBRATES</p>
+        <h2>Your Trusted Tech Partner</h2>
+        <a href="#" class="btn btn-outline-dark">Explore Now</a>
+    </div>
+</section>
+
+<!-- Trending Products Section -->
+<section class="product-slider-section">
+    <div class="container">
+        <div class="section-header">
+            <p>Latest Products</p>
+            <h2>PORTABLE FANS</h2>
+        </div>
+        <div class="slider-container" id="product-slider">
+            <button class="slider-btn prev" id="product-prev"><i class="fa-solid fa-chevron-left"></i></button>
+            <div class="slider-wrapper">
+                <div class="slider-track">
+                    <!-- Product Items -->
+                    <div class="product-card">
+                        <img src="/public/images/product1.jpg" alt="MagPlus GaN Charger">
+                        <h3>MP-GAN65</h3>
+                        <p>65W 3-Port GaN Fast Charger</p>
+                        <span>$49.00</span>
+                    </div>
+                    <div class="product-card">
+                        <img src="/public/images/product2.webp" alt="MagPlus Shield Case">
+                        <h3>MP-SHIELD15</h3>
+                        <p>Protective Clear Case for new iPhone</p>
+                        <span>$29.00</span>
+                    </div>
+                    <div class="product-card">
+                        <img src="/public/images/product3.webp" alt="MagPlus Mini Fan">
+                        <h3>MP-FANMINI</h3>
+                        <p>Rechargeable Portable Mini Fan</p>
+                        <span>$25.00</span>
+                    </div>
+                    <div class="product-card">
+                        <img src="/public/images/product4.webp" alt="MagPlus Pro Cable">
+                        <h3>MP-CABLEPRO</h3>
+                        <p>Braided USB-C to USB-C 100W Cable</p>
+                        <span>$19.00</span>
+                    </div>
+                    <div class="product-card">
+                        <img src="/public/images/product5.webp" alt="MagPlus Pro Cable">
+                        <h3>MP-CABLEPRO</h3>
+                        <p>Braided USB-C to USB-C 100W Cable</p>
+                        <span>$19.00</span>
+                    </div>
+                </div>
+            </div>
+            <button class="slider-btn next" id="product-next"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+    </div>
+</section>
+
+<!-- History Section -->
+<section class="history-section">
+     <div class="container">
+        <div class="section-header">
+            <p>About Us</p>
+            <h2>#HISTORY</h2>
+        </div>
+        <div class="history-grid">
+            <div class="history-item">
+                <i class="fa-solid fa-hourglass-half"></i>
+                <p class="stat">10</p>
+                <p class="desc">Years of Trust</p>
+            </div>
+            <div class="history-item">
+                <i class="fa-solid fa-award"></i>
+                <p class="stat">20M+</p>
+                <p class="desc">Products Sold</p>
+            </div>
+            <div class="history-item">
+                <i class="fa-solid fa-trophy"></i>
+                <p class="stat">Since 2020</p>
+                <p class="desc">Design & Innovation Awards</p>
+            </div>
+            <div class="history-item">
+                <i class="fa-solid fa-users"></i>
+                <p class="stat">Since 2018</p>
+                <p class="desc">Community Partners</p>
+            </div>
+        </div>
+        <a href="#" class="btn btn-outline">Explore Now</a>
+    </div>
+</section>
+
+<!-- Content Section -->
+<section class="content-slider-section">
+    <div class="container">
+        <div class="section-header">
+            <p>What's Happening</p>
+            <h2>TECH NEWS</h2>
+        </div>
+        <div class="slider-container" id="content-slider">
+            <button class="slider-btn prev" id="content-prev"><i class="fa-solid fa-chevron-left"></i></button>
+            <div class="slider-wrapper">
+                <div class="slider-track">
+                    <!-- Content Items -->
+                    <a href="#" class="content-card">
+                        <img src="/public/images/category1.jpg" alt="Work from anywhere kit">
+                        <div>
+                            <p class="content-title">The Ultimate Work-From-Anywhere Tech Kit</p>
+                            <p class="content-date">1 Aug 2023</p>
+                        </div>
+                    </a>
+                    <a href="#" class="content-card">
+                        <img src="/public/images/category2.png" alt="Portable fan">
+                        <div>
+                            <p class="content-title">Stay Cool On The Go: Introducing the MP-Fan Mini</p>
+                            <p class="content-date">15 Jul 2023</p>
+                        </div>
+                    </a>
+                    <a href="#" class="content-card">
+                        <img src="/public/images/category3.webp" alt="Clean desk setup">
+                        <div>
+                            <p class="content-title">Declutter Your Desk: The One Cable to Rule Them All</p>
+                            <p class="content-date">17 May 2023</p>
+                        </div>
+                    </a>
+                    <a href="#" class="content-card">
+                        <img src="/public/images/category4.webp" alt="Person holding phone">
+                        <div>
+                            <p class="content-title">How to Choose the Right Phone Case For Your Lifestyle</p>
+                            <p class="content-date">26 Apr 2023</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <button class="slider-btn next" id="content-next"><i class="fa-solid fa-chevron-right"></i></button>
+        </div>
+    </div>
+</section>
+    </main>
+
+    </main>
+
+    <footer>
+        <!-- Your footer content remains exactly the same -->
+        <div class="footer-container">
+            <div class="footer-top">
+                <p>CONNECT WITH US</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-main">
+                <div class="footer-info">
+                    <h3>MAGPLUS / A CHALLENGER TECHNOLOGIES BRAND</h3>
+                    <p>Add: 1 Ubi View, #04-01<br>Challenger TecHub<br>Singapore 408555</p>
+                    <p>Tel: +65 6494 8328</p>
+                    <p>Email: contact@magplus.com.sg</p>
+                </div>
+                <div class="footer-links">
+                    <h4>MENU</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Tech Blog</a></li>
+                        <li><a href="#">Lifestyle</a></li>
+                        <li><a href="#">Where To Buy</a></li>
+                        <li><a href="#">Support & Repair</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>OTHER INFO</h4>
+                    <ul>
+                        <li><a href="#">Login/Register</a></li>
+                        <li><a href="#">Account</a></li>
+                        <li><a href="#">My Cart</a></li>
+                        <li><a href="#">Corporate Sales</a></li>
+                        <li><a href="#">History</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 MagPlus. A brand by Challenger Technologies Limited. All Rights Reserved.</p>
+                <p>Ecommerce Web Development by <a href="#">Firstcom Solutions</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/public/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+---
+layout: base.njk
+title: Our Products
+---
+
+{# Get a unique list of categories using the filter we just made in .eleventy.js #}
+{% set categories = products | getUniqueCategories %}
+
+<div class="product-page-layout">
+    
+    {# --- FILTER SIDEBAR --- #}
+<aside id="filter-sidebar" class="filter-sidebar">
+    {# This button is the clickable header for our mobile accordion #}
+    <button class="accordion-header" aria-expanded="false" aria-controls="filter-content">
+        <span>Filters</span>
+        {# This icon will rotate when the accordion is open #}
+        <i class="fa-solid fa-chevron-down accordion-icon"></i>
+    </button>
+
+    {# We wrap the form in a new div that we can easily show/hide #}
+    <div id="filter-content" class="accordion-content">
+        <form id="filter-form">
+                <!-- NEW: SIDEBAR SEARCH INPUT -->
+        <div class="filter-group">
+            <h3>Search by Name</h3>
+            <input type="search" id="sidebar-search-input" placeholder="Enter product name..." class="sidebar-search">
+        </div>
+            <div class="filter-group">
+                <h3>Category</h3>
+                <ul class="filter-list">
+                    {% for category in categories %}
+                        <li>
+                            <label>
+                                <input type="checkbox" name="category" value="{{ category | slugify }}">
+                                {{ category }}
+                            </label>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </form>
+    </div>
+</aside>
+
+    {# --- PRODUCT GRID & PAGINATION CONTAINER --- #}
+    <main class="product-grid-container">
+        <div id="product-grid" class="product-grid">
+            {# Loop through ALL products. JS will handle showing/hiding them. #}
+            {# We add a 'data-category' attribute for our JS to read. #}
+            {% for item in products %}
+                <a href="/products/{{ item.slug }}/" class="product-card" data-category="{{ item.category | slugify }}">
+                    <img src="{{ item.image }}" alt="{{ item.title }}">
+                    <h3>{{ item.sku }}</h3>
+                    <p>{{ item.title }}</p>
+                    <span>${{ item.price }}</span>
+                </a>
+            {% endfor %}
+        </div>
+        
+        {# This nav is now a placeholder. JS will generate the page links here. #}
+        <nav id="pagination-container" class="pagination-nav" aria-label="Product page navigation"></nav>
+    </main>
+
+</div>
