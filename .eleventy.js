@@ -32,6 +32,11 @@ module.exports = function(eleventyConfig) {
       .replace(/[\s_-]+/g, '-')
       .replace(/^-+|-+$/g, '');
   });
+
+  eleventyConfig.addFilter("hasSlug", function(arr) {
+    return arr.filter(item => item.slug);
+  });
+  
   return {
     dir: {
       input: ".",
