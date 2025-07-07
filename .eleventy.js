@@ -4,6 +4,8 @@ module.exports = function(eleventyConfig) {
   // Tell Eleventy to copy the 'public' directory to the output folder
   eleventyConfig.addPassthroughCopy("public");
 
+  eleventyConfig.addPassthroughCopy("admin");
+
   // Helper filter to get unique categories from the products
   eleventyConfig.addFilter("getUniqueCategories", function(products) {
     const categories = new Set();
@@ -36,7 +38,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("hasSlug", function(arr) {
     return arr.filter(item => item.slug);
   });
-  
+
   return {
     dir: {
       input: ".",
