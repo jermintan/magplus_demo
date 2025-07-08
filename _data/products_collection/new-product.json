@@ -1,0 +1,9 @@
+{
+  "title": "New Product",
+  "sku": "1235",
+  "slug": "NewProduct",
+  "category": "Product",
+  "price": 100,
+  "description": "Good product.",
+  "image": "/images/uploads/product1.jpg"
+}
