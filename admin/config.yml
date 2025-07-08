@@ -29,28 +29,22 @@ public_folder: "/images/uploads" # Public URL path for the browser to access ima
 # Content Collections
 # Content Collections
 # Content Collections
+# Content Collections
 collections:
   - name: "products"
     label: "Products"
     label_singular: "Product"
+    folder: "_data/products_collection" # The REAL source of your product data
+    create: true # Allow creating new product files
+    extension: "json" # Save new files as .json
+    format: "json" # Tell the editor to use JSON formatting
     
-    # This 'files' collection targets a single file.
-    files:
-      # This is the single file we are editing.
-      - name: "product_data"     # A unique name for this file entry
-        label: "All Products"     # The label for this specific file in the UI
-        file: "_data/products.js" # The path to your data file
-        format: "javascript"
-
-        # This widget tells Decap that the ENTIRE file is a list of items.
-        widget: "list"
-        
-        # 'fields' now describes ONE item inside that list.
-        fields:
-          - { label: "Product Name", name: "title", widget: "string" }
-          - { label: "SKU", name: "sku", widget: "string" }
-          - { label: "URL Slug", name: "slug", widget: "string", hint: "A URL-safe version of the title, like 'my-product-name'." }
-          - { label: "Category", name: "category", widget: "string" }
-          - { label: "Product Image", name: "image", widget: "image" }
-          - { label: "Price", name: "price", widget: "number", value_type: "float" }
-          - { label: "Description", name: "description", widget: "text" }
+    # These fields define the content of EACH .json file in the folder
+    fields:
+      - { label: "Product Name", name: "title", widget: "string" }
+      - { label: "SKU", name: "sku", widget: "string" }
+      - { label: "URL Slug", name: "slug", widget: "string", hint: "A URL-safe version of the title, like 'my-product-name'." }
+      - { label: "Category", name: "category", widget: "string" }
+      - { label: "Product Image", name: "image", widget: "image" }
+      - { label: "Price", name: "price", widget: "number", value_type: "float" }
+      - { label: "Description", name: "description", widget: "text" }
