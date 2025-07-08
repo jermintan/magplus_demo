@@ -1,12 +1,10 @@
-# Use DecapBridge auth (required)
+# Use DecapBridge auth (This part is correct, keep it)
 backend:
   name: git-gateway
-  repo: jermintan/magplus_demo
+  repo: jermintan/magplus_demo # Make sure this repository path is correct
   branch: main
   identity_url: https://auth.decapbridge.com/sites/c0f38172-fe6d-4aa5-941e-1598d26cc671
   gateway_url: https://gateway.decapbridge.com
-
-  # Quickly see who did what (optional)
   commit_messages:
     create: Create {{collection}} “{{slug}}” - {{author-name}} <{{author-login}}> via DecapBridge
     update: Update {{collection}} “{{slug}}” - {{author-name}} <{{author-login}}> via DecapBridge
@@ -15,8 +13,28 @@ backend:
     deleteMedia: Delete “{{path}}” - {{author-name}} <{{author-login}}> via DecapBridge
     openAuthoring: Message {{message}} - {{author-name}} <{{author-login}}> via DecapBridge
 
-# Better Decap + Bridge logo (optional)
+# Better Decap + Bridge logo (This part is correct, keep it)
 logo_url: https://decapbridge.com/decapcms-with-bridge.svg
 
-# Add site links in DecapCMS (optional)
+# Add site links in DecapCMS (This part is correct, keep it)
 site_url: https://magplus-demo4.pages.dev
+
+# --- ADD THIS SECTION ---
+# Media Folders (Tells Decap where to store uploaded images)
+media_folder: "public/images/uploads" # Path where images will be saved in your repo
+public_folder: "/images/uploads" # Public URL path for the browser to access images
+
+# --- AND ADD THIS SECTION ---
+# Content Collections (Defines the content types you want to edit)
+collections:
+  - name: "products" # An internal identifier for the collection
+    label: "Products" # The name that appears in the CMS sidebar
+    folder: "products" # The folder in your repo where new product files will be stored
+    create: true # Allows users to create new products in the CMS
+    slug: "{{slug}}" # Sets the filename for new products based on the title
+    fields: # Defines the form fields for editing a single product
+      - { label: "Product Name", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "thumbnail", widget: "image", required: false }
+      - { label: "Price", name: "price", widget: "number", value_type: "float", required: false }
+      - { label: "Product Description", name: "body", widget: "markdown" }
