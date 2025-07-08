@@ -27,31 +27,32 @@ public_folder: "/images/uploads" # Public URL path for the browser to access ima
 # --- AND ADD THIS SECTION ---
 # Content Collections (Defines the content types you want to edit)
 # Content Collections
+# Content Collections
 collections:
-  - name: "products"           # Internal name for the collection
-    label: "Products"          # Name that appears in the CMS sidebar
-    label_singular: "Product"  # Label for a single item
+  - name: "products"
+    label: "Products"
+    label_singular: "Product"
     
-    # This is the correct structure for managing a list of specific files.
+    # This 'files' collection targets a single file.
     files:
-      # We are defining only one file to manage in this collection.
+      # This is the single file we are editing.
       - name: "product_list"
         label: "All Products"
-        file: "_data/products.js" # The EXACT path to your product data
-        format: "javascript"      # Tells Decap how to parse the file
-        
-        # The fields below describe the structure WITHIN the products.js file
+        file: "_data/products.js"
+        format: "javascript"
+
+        # These fields describe the structure WITHIN the file.
+        # Since the file itself IS the list, we put the list widget at the top level.
+        widget: "list"
+        label: "Product List"
+        name: "products" # This is an internal name, does not affect parsing
+
+        # These are the fields for EACH object inside the list.
         fields:
-          - name: "products"     # The name of the array that is exported
-            label: "Product List"
-            widget: "list"       # Display the array as an editable list
-            
-            # These are the fields for EACH object inside the product list
-            fields:
-              - { label: "Product Name", name: "title", widget: "string" }
-              - { label: "SKU", name: "sku", widget: "string" }
-              - { label: "URL Slug", name: "slug", widget: "string", hint: "A URL-safe version of the title, like 'my-product-name'. This is required." }
-              - { label: "Category", name: "category", widget: "string" }
-              - { label: "Product Image", name: "image", widget: "image" }
-              - { label: "Price", name: "price", widget: "number", value_type: "float" }
-              - { label: "Description", name: "description", widget: "text" }
+          - { label: "Product Name", name: "title", widget: "string" }
+          - { label: "SKU", name: "sku", widget: "string" }
+          - { label: "URL Slug", name: "slug", widget: "string", hint: "A URL-safe version of the title, like 'my-product-name'." }
+          - { label: "Category", name: "category", widget: "string" }
+          - { label: "Product Image", name: "image", widget: "image" }
+          - { label: "Price", name: "price", widget: "number", value_type: "float" }
+          - { label: "Description", name: "description", widget: "text" }
