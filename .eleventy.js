@@ -2,7 +2,7 @@
 
 module.exports = function(eleventyConfig) {
   // Tell Eleventy to copy the 'public' directory to the output folder
-  eleventyConfig.addPassthroughCopy({ "public/": "/" });
+  eleventyConfig.addPassthroughCopy("public/images");
 
   // === THIS IS THE ONLY CHANGE NEEDED ===
   // We've renamed 'admin' to 'cms', so we update the passthrough copy instruction.
