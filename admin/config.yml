@@ -26,20 +26,32 @@ public_folder: "/images/uploads" # Public URL path for the browser to access ima
 
 # --- AND ADD THIS SECTION ---
 # Content Collections (Defines the content types you want to edit)
+# Content Collections
 collections:
-  - name: "products_file" # A new internal name
-    label: "Products" # This is what you see in the sidebar
-    label_singular: "Product"
-    file: "_data/products.js" # CRITICAL: Points to your single data file
-    format: "javascript" # Tells Decap how to read/write the file
-    fields:
-      - name: "products" # Matches the name of the exported array
-        label: "Product List"
-        widget: "list" # This makes the entire collection an editable list
-        fields: # These are the fields for EACH item in the list
-          - { label: "Product Name", name: "title", widget: "string" }
-          - { label: "SKU", name: "sku", widget: "string" }
-          - { label: "Category", name: "category", widget: "string" }
-          - { label: "Product Image", name: "image", widget: "image" }
-          - { label: "Price", name: "price", widget: "number", value_type: "float" }
-          - { label: "Description", name: "description", widget: "text" }
+  - name: "products"           # Internal name for the collection
+    label: "Products"          # Name that appears in the CMS sidebar
+    label_singular: "Product"  # Label for a single item
+    
+    # This is the correct structure for managing a list of specific files.
+    files:
+      # We are defining only one file to manage in this collection.
+      - name: "product_list"
+        label: "All Products"
+        file: "_data/products.js" # The EXACT path to your product data
+        format: "javascript"      # Tells Decap how to parse the file
+        
+        # The fields below describe the structure WITHIN the products.js file
+        fields:
+          - name: "products"     # The name of the array that is exported
+            label: "Product List"
+            widget: "list"       # Display the array as an editable list
+            
+            # These are the fields for EACH object inside the product list
+            fields:
+              - { label: "Product Name", name: "title", widget: "string" }
+              - { label: "SKU", name: "sku", widget: "string" }
+              - { label: "URL Slug", name: "slug", widget: "string", hint: "A URL-safe version of the title, like 'my-product-name'. This is required." }
+              - { label: "Category", name: "category", widget: "string" }
+              - { label: "Product Image", name: "image", widget: "image" }
+              - { label: "Price", name: "price", widget: "number", value_type: "float" }
+              - { label: "Description", name: "description", widget: "text" }
