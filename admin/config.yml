@@ -27,14 +27,16 @@ public_folder: "/images/uploads" # Public URL path for the browser to access ima
 # --- AND ADD THIS SECTION ---
 # Content Collections (Defines the content types you want to edit)
 collections:
-  - name: "products" # An internal identifier for the collection
-    label: "Products" # The name that appears in the CMS sidebar
-    folder: "products" # The folder in your repo where new product files will be stored
-    create: true # Allows users to create new products in the CMS
-    slug: "{{slug}}" # Sets the filename for new products based on the title
-    fields: # Defines the form fields for editing a single product
+  - name: "products"
+    label: "Products"
+    folder: "products"
+    create: true
+    slug: "{{slug}}"
+    fields:
       - { label: "Product Name", name: "title", widget: "string" }
-      - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Featured Image", name: "thumbnail", widget: "image", required: false }
-      - { label: "Price", name: "price", widget: "number", value_type: "float", required: false }
-      - { label: "Product Description", name: "body", widget: "markdown" }
+      - { label: "SKU", name: "sku", widget: "string" }
+      - { label: "Category", name: "category", widget: "string" } # ADDED THIS LINE
+      - { label: "Product Image", name: "image", widget: "image" }
+      - { label: "Price", name: "price", widget: "number", value_type: "float" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Publish Date", name: "date", widget: "datetime", required: false }
