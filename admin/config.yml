@@ -28,6 +28,7 @@ public_folder: "/images/uploads" # Public URL path for the browser to access ima
 # Content Collections (Defines the content types you want to edit)
 # Content Collections
 # Content Collections
+# Content Collections
 collections:
   - name: "products"
     label: "Products"
@@ -36,18 +37,15 @@ collections:
     # This 'files' collection targets a single file.
     files:
       # This is the single file we are editing.
-      - name: "product_list"
-        label: "All Products"
-        file: "_data/products.js"
+      - name: "product_data"     # A unique name for this file entry
+        label: "All Products"     # The label for this specific file in the UI
+        file: "_data/products.js" # The path to your data file
         format: "javascript"
 
-        # These fields describe the structure WITHIN the file.
-        # Since the file itself IS the list, we put the list widget at the top level.
+        # This widget tells Decap that the ENTIRE file is a list of items.
         widget: "list"
-        label: "Product List"
-        name: "products" # This is an internal name, does not affect parsing
-
-        # These are the fields for EACH object inside the list.
+        
+        # 'fields' now describes ONE item inside that list.
         fields:
           - { label: "Product Name", name: "title", widget: "string" }
           - { label: "SKU", name: "sku", widget: "string" }
